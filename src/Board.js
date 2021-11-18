@@ -11,7 +11,7 @@ class Board extends React.Component {
       const {squares, nextPlayer} = this.props;
       const winner = calculateWinner(squares);
       let status = '';
-      if(!squares.includes(null)){
+      if(winner === null && !squares.includes(null)){
         status = "it's draw"
       } else {
         status= winner === null ? 'Next player: ' + (nextPlayer ? 'X' : 'O') : 'Winner: ' + winner;
